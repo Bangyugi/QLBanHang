@@ -159,5 +159,11 @@ namespace QLBanHang
 
             }
         }
+
+        private void btnThongke_Click(object sender, RoutedEventArgs e)
+        {
+            ThongKe thongKe = new ThongKe();
+            thongKe.Show();
+        }
     }
 }

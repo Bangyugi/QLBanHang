@@ -124,7 +124,8 @@
             <Button Content="Thêm" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnThem_Click" Margin="0 0 20 0"/>
             <Button Content="Sửa" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnSua_Click" Margin="0 0 20 0"/>
             <Button Content="Xóa" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnXoa_Click" Margin="0 0 20 0"/>
-            <Button Content="Tìm" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnTim_Click"/>
+            <Button Content="Tìm" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnTim_Click" Margin="0 0 20 0"/>
+            <Button Content="Thống kê" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnThongke_Click"/>
         </StackPanel>
     </Grid>
     

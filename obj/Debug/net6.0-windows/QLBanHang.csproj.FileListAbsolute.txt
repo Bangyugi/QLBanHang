@@ -55,3 +55,6 @@ D:\My storage\Desktop\Learning-corner\Learn_NET\QLBanHang\obj\Debug\net6.0-windo
 D:\My storage\Desktop\Learning-corner\Learn_NET\QLBanHang\obj\Debug\net6.0-windows\TimKiem.baml
 D:\My storage\Desktop\Learning-corner\Learn_NET\QLBanHang\obj\Debug\net6.0-windows\KetQua.g.cs
 D:\My storage\Desktop\Learning-corner\Learn_NET\QLBanHang\obj\Debug\net6.0-windows\KetQua.baml
+D:\My storage\Desktop\Learning-corner\Learn_NET\QLBanHang\obj\Debug\net6.0-windows\ThongKe.g.cs
+D:\My storage\Desktop\Learning-corner\Learn_NET\QLBanHang\obj\Debug\net6.0-windows\ThongKe.baml
+D:\My storage\Desktop\Learning-corner\Learn_NET\QLBanHang\obj\Debug\net6.0-windows\QLBanHang.sourcelink.json

@@ -10,6 +10,9 @@
     <Compile Update="KetQua.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ThongKe.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="TimKiem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ThongKe.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="TimKiem.xaml">
