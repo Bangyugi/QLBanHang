@@ -1,0 +1,132 @@
+﻿<Window x:Class="QLBanHang.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLBanHang"
+        mc:Ignorable="d" FontSize="16"
+        Title="MainWindow" Height="641" Width="831" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="TitleStyle">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 0 0 20"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="LabelStyle">
+            <Setter Property="Margin" Value="0 0 30 10"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="0 0 20 10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="0 0 20 10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="DataGrid" x:Key="DataGridStyle">
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="Margin" Value="0 20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+
+        <Style TargetType="DataGridColumnHeader" x:Key="HeaderStyle">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+    <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Text="Quản lý sản phẩm" Style="{StaticResource TitleStyle}"/>
+        <Label Grid.Column="1" Grid.Row="2" Content="Mã sản phẩm: " Style="{StaticResource LabelStyle}"/>
+        <Label Grid.Column="1" Grid.Row="3" Content="Tên sản phẩm: " Style="{StaticResource LabelStyle}"/>
+        <Label Grid.Column="1" Grid.Row="4" Content="Số lượng: " Style="{StaticResource LabelStyle}"/>
+        <Label Grid.Column="1" Grid.Row="5" Content="Đơn giá: " Style="{StaticResource LabelStyle}"/>
+        <Label Grid.Column="1" Grid.Row="6" Content="Loại sản phẩm: " Style="{StaticResource LabelStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="2" Name="txtMaSP" Width="200" Style="{StaticResource TextBoxStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="3" Name="txtTenSP" Width="250" Style="{StaticResource TextBoxStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="4" Name="txtSoLuong" Width="150" Style="{StaticResource TextBoxStyle}"/>
+        <TextBox Grid.Column="2" Grid.Row="5" Name="txtDonGia" Width="150" Style="{StaticResource TextBoxStyle}"/>
+        <ComboBox Grid.Column="2" Grid.Row="6" Name="cboLoaiSP" Width="200" Style="{StaticResource ComboBoxStyle}">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Width" Value="200"/>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
+         
+        <DataGrid Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" Name="dgSanPham" 
+                  CanUserAddRows="False"
+                  AutoGenerateColumns="False" 
+                  SelectionChanged="DgSanPham_SelectionChanged"
+                  Style="{StaticResource DataGridStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã sản phẩm" Width="120" Binding="{Binding MaSp}" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Header="Tên sản phẩm" Width="180" Binding="{Binding TenSp}"  HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Header="Tên Loại sản phẩm" Width="150" Binding="{Binding TenLoaiSP}" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Header="Đơn giá" Width="100" Binding="{Binding DonGia, StringFormat=N0}" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Header="Số lượng" Width="100" Binding="{Binding SoLuong}" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Header="Thành Tiền" Width="*" Binding="{Binding ThanhTien,StringFormat=N0}" HeaderStyle="{StaticResource HeaderStyle}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Red"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Thêm" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnThem_Click" Margin="0 0 20 0"/>
+            <Button Content="Sửa" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnSua_Click" Margin="0 0 20 0"/>
+            <Button Content="Xóa" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnXoa_Click" Margin="0 0 20 0"/>
+            <Button Content="Tìm" Width="100" Height="30" Style="{StaticResource ButtonStyle}" Click="btnTim_Click"/>
+        </StackPanel>
+    </Grid>
+    
+
+</Window>
